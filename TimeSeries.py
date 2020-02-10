@@ -3,12 +3,11 @@
 
 
 from pylab import scatter, plot, xlim, ylim, xlabel, ylabel, show
+import pylab
 import numpy
 
 xVal = []
 time = []
-
-dataFile = open("data.txt", "a")
 
 
 #Logisitic map function
@@ -23,8 +22,10 @@ for i in numpy.arange(0, 100, 1):
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
+    oneAdata = xVal.copy()
 
 #create graph 1a
+pylab.figure(1)
 scatter(time, xVal, s = .2)
 plot(time, xVal, color = "blue")
 
@@ -38,16 +39,17 @@ for i in numpy.arange(0, 100, 1):
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
+    oneBdata = xVal.copy()
 
 
 
 #create graph 1b
 scatter(time, xVal, s = .2)
-plot(time, xVal, color = "red", linestyle = 'dashed')
-#xlim(0, 100)
-#ylim(0.5,0.8)
-#xlabel("Time")
-#ylabel("X[t]")
+plot(time, xVal, color = "red")
+xlim(0, 100)
+ylim(0.5,0.8)
+xlabel("Time")
+ylabel("X[t]")
 #show()
 
 #create a third graph, different (chaotic) r values, same intitial conditions
@@ -58,13 +60,15 @@ time = []
 
 xNew = 0.3 #value for initial condition
 for i in numpy.arange(0, 100, 1):
-    xNew = logMap(3.2, xNew)
+    xNew = logMap(3.7, xNew)
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
+    twoAdata = xVal.copy()
 
+pylab.figure(2)
 scatter(time, xVal, s = .2)
-plot(time, xVal, color = "yellow")
+plot(time, xVal, color = "blue")
 
 #graph 2b
 
@@ -72,18 +76,38 @@ xNew = 0.5
 xVal = []
 time = []
 for i in numpy.arange(0, 100, 1):
-    xNew = logMap(3.2, xNew)
+    xNew = logMap(3.7, xNew)
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
+    twoBdata = xVal.copy()
 
 
 
 #graph 2b and draw
 scatter(time, xVal, s = .2)
-plot(time, xVal, color = "green")
+plot(time, xVal, color = "red")
 xlim(0, 100)
-ylim(0.5,0.8)
+ylim(0.0,1.0)
 xlabel("Time")
 ylabel("X[t]")
 show()
+
+#write data to file
+dataFile = open("dataNonChaotic.txt", "w")
+for i in range(len(oneAdata)):
+    dataFile.write(" ")
+    dataFile.write(str(oneAdata[i]))
+    dataFile.write(" ")
+    dataFile.write(str(oneBdata[i]))
+    dataFile.write('\n')
+dataFile.close()
+
+dataFile2 = open("dataChaotic.txt", "w")
+for i in range(len(twoAdata)):
+    dataFile2.write(" ")
+    dataFile2.write(str(twoAdata[i]))
+    dataFile2.write(" ")
+    dataFile2.write(str(twoBdata[i]))
+    dataFile2.write('\n')
+dataFile2.close()
