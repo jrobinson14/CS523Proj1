@@ -1,0 +1,52 @@
+import numpy
+import matplotlib.pylab as pylab
+import random
+
+xVals = []
+total = []
+
+def walker(epsilon, N, K):
+    for i in range(0, N, 1):
+        print("Starting New Population, Current Count = ", i)
+        xVal = [1] * 1000
+        xNew = 1 #initial state
+        #r = 3.9 #chaotic r value
+        for i in range(0, 1000, 1):
+            xNew = (1 - epsilon) * localDyn(K, xNew) + epsilon * mn(xVal, K, N)
+            xVal[i] = xNew
+        #print("x vals: ", xVal)
+        xVals.append(xVal) #update collection of populations with computed population
+        #total.append(xVals)
+    Mn(N)
+    #find Mn after populating all of xVal, add to total list
+
+
+
+def localDyn(K, x):
+    r = random.uniform(3.9, 4.0)
+    #print("r is:", r)
+    return r * x * (1 - (x/K))
+
+
+def mn(xVal, K, N):
+    sums = []
+    for i in range(0,len(xVal), 1):
+        sums.append(localDyn(K, xVal[i]))
+    result = sum(sums)
+    return((1/len(xVal))*result)
+
+def Mn(N):
+    for i in range(len(xVals)):
+        x = (1/len(xVals[i])) * sum(xVals[i])
+        print("Mn x Vals:", x)
+        total.append(x)
+
+walker(0.5, 50, 100)
+
+graphMn = total[:-1]
+total.pop(0)
+pylab.scatter(graphMn, total, s = .2)
+pylab.xlim(0,100)
+pylab.ylim(0,100)
+#pylab.plot(graphMn, xVal, color = "blue")
+pylab.show()

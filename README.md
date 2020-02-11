@@ -15,3 +15,7 @@ Currently creates two figures. Figure 1 is a non-chaotic time series, Figure 2 i
 # Data Files
 
 data generated is stored in two files: dataChaotic.txt and dataNonChaotic.txt
+
+# WalkerEq
+
+Implementation of equation used as model in Walker paper to get fig 3. Currently has issues.
