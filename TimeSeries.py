@@ -97,18 +97,18 @@ show()
 dataFile = open("dataNonChaotic.txt", "w")
 for i in range(len(oneAdata)):
     dataFile.write(" ")
-    dataFile.write(str(round(oneAdata[i]*100)))
+    dataFile.write(str(round(oneAdata[i])))
     dataFile.write(" ")
-    dataFile.write(str(round(oneBdata[i]*100)))
+    dataFile.write(str(round(oneBdata[i])))
     dataFile.write('\n')
 dataFile.close()
 
 dataFile2 = open("dataChaotic.txt", "w")
 for i in range(len(twoAdata)):
     dataFile2.write(" ")
-    dataFile2.write(str(round(twoAdata[i]*100)))
+    dataFile2.write(str(round(twoAdata[i])))
     dataFile2.write(" ")
-    dataFile2.write(str(round(twoBdata[i]*100)))
+    dataFile2.write(str(round(twoBdata[i])))
     dataFile2.write('\n')
 dataFile2.close()
 
