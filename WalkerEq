@@ -8,13 +8,13 @@ total = []
 def walker(epsilon, N, K):
     for i in range(0, N, 1):
         print("Starting New Population, Current Count = ", i)
-        xVal = [1] * 1000
+        xVal = [1] * 10000
         xNew = 1 #initial state
-        #r = 3.9 #chaotic r value
+
         for i in range(0, 1000, 1):
             xNew = (1 - epsilon) * localDyn(K, xNew) + epsilon * mn(xVal, K, N)
             xVal[i] = xNew
-        #print("x vals: ", xVal)
+        print("x vals: ", xVal)
         xVals.append(xVal) #update collection of populations with computed population
         #total.append(xVals)
     Mn(N)

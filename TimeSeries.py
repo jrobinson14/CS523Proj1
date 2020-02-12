@@ -60,7 +60,7 @@ time = []
 
 xNew = 0.3 #value for initial condition
 for i in numpy.arange(0, 100, 1):
-    xNew = logMap(3.7, xNew)
+    xNew = logMap(3.9, xNew)
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
@@ -72,11 +72,11 @@ plot(time, xVal, color = "blue")
 
 #graph 2b
 
-xNew = 0.5
+xNew = 0.300001 #diverges at x = 16
 xVal = []
 time = []
 for i in numpy.arange(0, 100, 1):
-    xNew = logMap(3.7, xNew)
+    xNew = logMap(3.9, xNew)
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
@@ -93,21 +93,23 @@ xlabel("Time")
 ylabel("X[t]")
 show()
 
-#write data to file
+#write data to file, uses round() function to descretize data
 dataFile = open("dataNonChaotic.txt", "w")
 for i in range(len(oneAdata)):
     dataFile.write(" ")
-    dataFile.write(str(oneAdata[i]))
+    dataFile.write(str(round(oneAdata[i]*100)))
     dataFile.write(" ")
-    dataFile.write(str(oneBdata[i]))
+    dataFile.write(str(round(oneBdata[i]*100)))
     dataFile.write('\n')
 dataFile.close()
 
 dataFile2 = open("dataChaotic.txt", "w")
 for i in range(len(twoAdata)):
     dataFile2.write(" ")
-    dataFile2.write(str(twoAdata[i]))
+    dataFile2.write(str(round(twoAdata[i]*100)))
     dataFile2.write(" ")
-    dataFile2.write(str(twoBdata[i]))
+    dataFile2.write(str(round(twoBdata[i]*100)))
     dataFile2.write('\n')
 dataFile2.close()
+
+
