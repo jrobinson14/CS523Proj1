@@ -1,6 +1,7 @@
 import random
 import pylab
 import numpy
+import copy
 
 x = 1000
 populations = [1]*x  # collection of 1000 logistic maps, initialized to 1
@@ -52,7 +53,7 @@ N = 10000  # number of time steps
 walker(0.0, N, 100)
 # Not super effecient: create 2 copies of instan mean field values
 # Take 1st element form 1, last element from 2 so that graph is x = Mn y = Mn + 1
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='m')
@@ -60,7 +61,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='m')
 # plot ep = 0.075
 instantMeanField = []
 walker(0.075, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='r')
@@ -68,7 +69,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='r')
 # plot ep = 0.1
 instantMeanField = []
 walker(0.1, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='b')
@@ -76,7 +77,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='b')
 # plot ep = 0.2
 instantMeanField = []
 walker(0.2, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='orange')
@@ -84,7 +85,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='orange')
 # plot ep = 0.225
 instantMeanField = []
 walker(0.225, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='aqua')
@@ -93,7 +94,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='aqua')
 # plot ep = 0.25
 instantMeanField = []
 walker(0.25, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='#006400')
@@ -102,7 +103,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='#006400')
 # plot ep = 0.3
 instantMeanField = []
 walker(0.3, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='grey')
@@ -110,7 +111,7 @@ pylab.scatter(graphMn, instantMeanField, s=.2, color='grey')
 # plot ep = 0.4
 instantMeanField = []
 walker(0.4, N, 100)
-graphMn = instantMeanField.copy()  # copy list
+graphMn = copy.copy(instantMeanField)  # copy list
 graphMn.pop(len(graphMn) - 1)  # take last value
 instantMeanField.pop(0)  # take first value
 pylab.scatter(graphMn, instantMeanField, s=.2, color='black')

@@ -5,6 +5,7 @@
 from pylab import scatter, plot, xlim, ylim, xlabel, ylabel, show
 import pylab
 import numpy
+import copy
 
 xVal = []
 time = []
@@ -22,7 +23,7 @@ for i in numpy.arange(0, 100, 1):
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
-    oneAdata = xVal.copy()
+    oneAdata = copy.copy(xVal)
 
 #create graph 1a
 pylab.figure(1)
@@ -39,7 +40,7 @@ for i in numpy.arange(0, 100, 1):
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
-    oneBdata = xVal.copy()
+    oneBdata = copy.copy(xVal)
 
 
 
@@ -64,7 +65,7 @@ for i in numpy.arange(0, 100, 1):
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
-    twoAdata = xVal.copy()
+    twoAdata = copy.copy(xVal)
 
 pylab.figure(2)
 scatter(time, xVal, s = .2)
@@ -80,7 +81,7 @@ for i in numpy.arange(0, 100, 1):
     #print(xNew)
     xVal.append(xNew)
     time.append(i)
-    twoBdata = xVal.copy()
+    twoBdata = copy.copy(xVal)
 
 
 
