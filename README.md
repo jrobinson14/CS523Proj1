@@ -1,4 +1,4 @@
-This project uses Python 3.8 and was tested on Windows 10 and MacOS mojave machines. 
+This project uses Python 3.8 and was tested on Windows 10 and MacOS mojave machines. Use of any other versions of python seems to cause problems with matplotlib and graphing. There seem to be some problems running Matplotlib and Pylab on the CS Linux machines. Some graphs do not appear. 
 
 # TimeSeries.py
 
