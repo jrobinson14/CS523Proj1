@@ -1,4 +1,8 @@
-This project uses Python 3.8 and was tested on Windows 10 and MacOS mojave machines. Use of any other versions of python seems to cause problems with matplotlib and graphing. There seem to be some problems running Matplotlib and Pylab on the CS Linux machines. Some graphs do not appear. 
+This project uses Python 3.8 and was tested on Windows 10 and MacOS mojave machines. Use of any other versions of python seems to cause problems with matplotlib and graphing. There seem to be some problems running Matplotlib and Pylab on the CS Linux machines. Some graphs do not appear, this seems to be an issue on at least some versions of Ubuntu Linux. Some resources on the issue: 
+
+https://stackoverflow.com/questions/7534453/matplotlib-does-not-show-my-drawings-although-i-call-pyplot-show
+
+https://www.pyimagesearch.com/2015/08/24/resolved-matplotlib-figures-not-showing-up-or-displaying/
 
 # TimeSeries.py
 
@@ -13,7 +17,8 @@ R values and intial conditions are currently hard coded so no input is needed.
 
 # Data Files
 
-data generated is stored in two files: dataChaotic.txt and dataNonChaotic.txt
+Data generated on periodic and chaotic time series is stored in two files: dataChaotic.txt and dataNonChaotic.txt. These files are created in the local directory when TimeSeries.py is run. 
+
 
 # Walker2.0
 
