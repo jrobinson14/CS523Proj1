@@ -93,10 +93,7 @@ generate_plot(0.05)
 
 pylab.xlim(0, 1)
 # pylab.ylim(0, 2)
-pylab.xlabel("Global Coupling Strength")
-pylab.ylabel("Bits")
+pylab.xlabel("Global Coupling Strength", fontsize=20)
+pylab.ylabel("Bits", fontsize=20)
 print("complete, graphing")
 pylab.show()
-
-
-print("what")

@@ -16,9 +16,9 @@ def walker(epsilon, N, K):
     b = 0
 
     instantMeanField = []
-    color = iter(cm.rainbow(numpy.linspace(0,1,201)))
+    color = iter(cm.rainbow(numpy.linspace(0,1,101)))
 
-    while (p <= 1):
+    while (p <= 0.5):
         for i in range(N):  # repeat N time steps
             if i % 100 == 0:
                 print("Starting Next Time Step:", i, " For epsilon:", p)
@@ -63,14 +63,14 @@ def Mn(instantMeanField):
     # instantMeanField.append(mn(100))
 
 
-N = 100  # number of time steps
+N = 1000  # number of time steps
 
 # plot ep = 0.0
 walker(0.0, N, 100)
 
 pylab.xlim(0,100)
 pylab.ylim(0,100)
-pylab.xlabel("Mn")
-pylab.ylabel("Mn + 1")
+pylab.xlabel("Mn", fontsize=20)
+pylab.ylabel("Mn + 1", fontsize=20)
 print("complete, graphing")
 pylab.show()
