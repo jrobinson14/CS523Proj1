@@ -87,11 +87,11 @@ for i in numpy.arange(0, 100, 1):
 
 #graph 2b and draw
 scatter(time, xVal, s = .2)
-plot(time, xVal, color = "red")
+plot(time, xVal, '-o', color = "red")
 xlim(0, 100)
 ylim(0.0,1.0)
-xlabel("Time")
-ylabel("X[t]")
+xlabel("Time", fontsize = 20)
+ylabel("X[t]", fontsize = 20)
 show()
 
 #write data to file, uses round() function to descretize data
