@@ -19,7 +19,15 @@ R values and intial conditions are currently hard coded so no input is needed.
 
 Data generated on periodic and chaotic time series is stored in two files: dataChaotic.txt and dataNonChaotic.txt. These files are created in the local directory when TimeSeries.py is run. 
 
+Data files for part 3 are located in directories named correspinding to each epsilon value. 
+
 
 # Walker2.0
 
 Implementation of equation used as model in Walker paper to get fig 4 and 5. Graphs return map for all values used in Walker paper. To run: python Walker2.0.py
+
+# WalkerFig4
+
+Used to generate data for part 4. Uses 1,000 populations over 1,000 time steps, randomly sampling 3 populations and comparing them to the Mn value for that time step. Writes reults to file in specified directory in local directory. 
+
+
